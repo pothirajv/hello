@@ -7,7 +7,7 @@
   <groupId>com.coveros.demo</groupId>
   <artifactId>helloworld</artifactId>
   <version>1.1</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging> <!-- Change packaging to "war" -->
 
   <name>Hello World</name>
   <description>The most basic of Java programs.</description>
@@ -20,6 +20,7 @@
     <jdk.version>1.8</jdk.version>
 
     <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+    <maven-war-plugin.version>3.3.2</maven-war-plugin.version> <!-- Add Maven WAR Plugin version -->
   </properties>
 
   <build>
@@ -32,6 +33,13 @@
           <source>${jdk.version}</source>
           <target>${jdk.version}</target>
         </configuration>
+      </plugin>
+      
+      <!-- Add Maven WAR Plugin configuration -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>${maven-war-plugin.version}</version>
       </plugin>
     </plugins>
   </build>
