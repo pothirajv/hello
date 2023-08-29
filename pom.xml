@@ -34,7 +34,16 @@
           <target>${jdk.version}</target>
         </configuration>
       </plugin>
-      
+      <!-- Adjust the path to match your actual directory structure -->
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-war-plugin</artifactId>
+    <version>${maven-war-plugin.version}</version>
+    <configuration>
+        <webXml>path/to/webapp/WEB-INF/web.xml</webXml>
+    </configuration>
+</plugin>
+
       <!-- Add Maven WAR Plugin configuration -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
